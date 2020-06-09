@@ -5,23 +5,28 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Validator;
 
 class AuthController extends Controller
 {
     //cadastrar novos usuários
     public function register(Request $request)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'name' => 'required|max:55',
             'email' => 'email|required|unique:users',
             'password' => 'required|confirmed'
-        ]);
+        ];
 
-        $validatedData['password'] = bcrypt($request->password);
+        $validator = Validator::make($request->all(), $rules);
 
-        $registerBd = User::select('id')->where('email', $request->password)->first();
+        if($validator->fails()){
+            return response()->json($validator->errors(), 400);
+        }
 
-        $user = User::create($validatedData);
+        $data = $request->all();
+        $data['password'] = bcrypt($request->password);
+        $user = User::create($data);
 
         $accessToken = $user->createToken('authToken')->accessToken;
 
