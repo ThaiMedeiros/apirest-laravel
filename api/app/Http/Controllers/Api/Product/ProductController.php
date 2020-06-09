@@ -106,6 +106,17 @@ class ProductController extends Controller
             return response()->json(['message' => 'Record not found!'], 404);
         }
 
+        $rules = [
+            'name' => 'required|min:4',
+            'description' => 'required|min:10|max:200',
+        ];
+
+        $validator = Validator::make($this->request->all(), $rules);
+
+        if($validator->fails()){
+            return response()->json($validator->errors(), 400);
+        }
+
         $product->update($this->request->all());
         return response()->json($product, 201);
     }
