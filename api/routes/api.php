@@ -21,5 +21,5 @@ Route::match(['get', 'put', 'delete'], 'login', 'Api\Auth\AuthController@login')
 
 //endpoints privates
 //esta forma simplificada atende todos os métodos do controlador (POST, PUT or PATCH, GET and DELETE)
-Route::apiResource('/products', 'Api\Product\ProductController')->middleware('auth:api');
+Route::apiResource('products', 'Api\Product\ProductController')->middleware('auth:api');
 Route::get('logout', 'Api\Auth\AuthController@logout')->middleware('auth:api');
