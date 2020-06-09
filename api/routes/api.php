@@ -14,8 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// rotas de teste do passport
+Route::post('register', 'Api\Auth\AuthController@register');
+Route::post('logged', 'Api\Auth\AuthController@logged');
+Route::match(['get', 'put', 'delete'], 'login', 'Api\Auth\AuthController@login')->name('login');
+//Route::get('login', 'Api\Auth\AuthController@login')->name('login');
 
-Route::resource('products', 'Product\ProductController'); //atende todos os métodos
+//esta forma simplificada atende todos os métodos do controlador
+Route::apiResource('/products', 'Api\Product\ProductController')->middleware('auth:api');
+/*Route::group(['middleware' => ['auth:api']], function(){
+    Route::get('/products', 'Api\Product\ProductController@index')->name('products.index');
+    Route::get('/products/{id}', 'Api\Product\ProductController@show')->name('products.show');
+    Route::put('/products/{id}', 'Api\Product\ProductController@update')->name('products.update');
+    Route::post('/products', 'Api\Product\ProductController@store')->name('products.store');
+    Route::delete('/products/{id}', 'Api\Product\ProductController@destroy')->name('products.destroy');
+});*/

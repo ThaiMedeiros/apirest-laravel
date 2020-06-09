@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Product;
+namespace App\Http\Controllers\Api\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -107,7 +107,7 @@ class ProductController extends Controller
         }
 
         $product->update($this->request->all());
-        return response()->json($product, 200);
+        return response()->json($product, 201);
     }
 
     /**
@@ -125,6 +125,6 @@ class ProductController extends Controller
         }
 
         $product->delete();
-        return response()->json(null, 204);
+        return response()->json(['message' => 'Product delete success!'], 201);
     }
 }
