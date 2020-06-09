@@ -27,6 +27,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //$products = Product::paginate();
+        //return view('admin.pages.products.index', ['products' => $products]);
+
         return response()->json(Product::get());
     }
 
@@ -37,7 +40,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.products.create');
     }
 
     /**
@@ -51,7 +54,13 @@ class ProductController extends Controller
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
+            //'photo' => 'nullable|image',
         ];
+
+        //$nameFile = $request->name . '.' . $request->photo->extension();
+        //if($request->file('photo')->isValid()){
+        //    $request->file('photo')->storeAs('products', $nameFile);
+        //}
 
         $validator = Validator::make($this->request->all(), $rules);
 
@@ -88,7 +97,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        //return view('admin.pages.products.edit', compact('id'));
     }
 
     /**
@@ -109,6 +118,7 @@ class ProductController extends Controller
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
+            'image' => 'nullable|image',
         ];
 
         $validator = Validator::make($this->request->all(), $rules);

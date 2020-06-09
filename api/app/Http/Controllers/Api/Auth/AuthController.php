@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class AuthController extends Controller
 {
@@ -65,6 +66,7 @@ class AuthController extends Controller
 
     //desloga o usuário do sistema
     public function logout(Request $request){
+
         $isUser = $request->user()->token()->revoke();
 
         if($isUser){
