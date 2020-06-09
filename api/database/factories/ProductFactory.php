@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Faker\Generator as Faker;
 
+// criando factory com relacionamento de chave estrangeira.
 $factory->define(Product::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
