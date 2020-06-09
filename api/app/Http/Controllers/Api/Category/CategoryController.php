@@ -1,25 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Api\Product;
+namespace App\Http\Controllers\Api\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\Product;
+use App\Models\Category;
 use Validator;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
-    // Attributes
-    private $request;
-
-    /**
-     * Injecting dependencies into the class constructor.
-     */
-    public function __construct(Request $request){
-        $this->request = $request;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -27,10 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$products = Product::paginate();
-        //return view('admin.pages.products.index', ['products' => $products]);
-
-        return response()->json(Product::get());
+        //retornar a lista de todas as categorias cadastradas
+        return response()->json(Category::get());
     }
 
     /**
@@ -40,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.products.create');
+        //
     }
 
     /**
@@ -49,28 +36,22 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
+        //cadastrar uma categoria
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
-            'photo' => 'nullable|image',
-            'category_id' => 'required',
         ];
 
-        $nameFile = $request->name . '.' . $request->photo->extension();
-        if($request->file('photo')->isValid()){
-            $request->file('photo')->storeAs('products', $nameFile);
-        }
-
-        $validator = Validator::make($this->request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules);
 
         if($validator->fails()){
             return response()->json($validator->errors(), 400);
         }
 
-        $product = Product::create($this->request->all());
-        return response()->json($product, 201);
+        $category = Category::create($request->all());
+        return response()->json($category, 201);
     }
 
     /**
@@ -81,13 +62,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        //exibir apenas um registro de categoria
+        $category = Category::find($id);
 
-        if(is_null($product)){
+        if(is_null($category)){
             return response()->json(['message' => 'Record not found!'], 404);
         }
 
-        return response()->json($product, 200);
+        return response()->json($category, 200);
     }
 
     /**
@@ -98,7 +80,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //return view('admin.pages.products.edit', compact('id'));
+        //
     }
 
     /**
@@ -108,29 +90,28 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        //atualizar um registro de categoria
+        $category = Category::findOrFail($id);
 
-        if(is_null($product)){
+        if(is_null($category)){
             return response()->json(['message' => 'Record not found!'], 404);
         }
 
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
-            'image' => 'nullable|image',
-            'category_id' => 'required',
         ];
 
-        $validator = Validator::make($this->request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules);
 
         if($validator->fails()){
             return response()->json($validator->errors(), 400);
         }
 
-        $product->update($this->request->all());
-        return response()->json($product, 201);
+        $category->update($request->all());
+        return response()->json($category, 201);
     }
 
     /**
@@ -141,13 +122,14 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
+        //deletar um registro de categoria
+        $category = Category::findOrFail($id);
 
-        if(is_null($product)){
+        if(is_null($category)){
             return response()->json(['message' => 'Record not found!'], 404);
         }
 
-        $product->delete();
-        return response()->json(['message' => 'Product delete success!'], 201);
+        $category->delete();
+        return response()->json(['message' => 'Category delete success!'], 201);
     }
 }
