@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
+use App\Models\Category;
 use Validator;
 
 class ProductController extends Controller
@@ -54,13 +55,16 @@ class ProductController extends Controller
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
-            'photo' => 'nullable|image',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'category_id' => 'required',
         ];
 
-        $nameFile = $request->name . '.' . $request->photo->extension();
-        if($request->file('photo')->isValid()){
-            $request->file('photo')->storeAs('products', $nameFile);
+        $category = Category::find($this->request->category_id);
+
+        if(is_null($category)){
+            return response()->json([
+                'message' => 'Informe uma categoria que esteja cadastrada no banco de dados.!'
+            ], 404);
         }
 
         $validator = Validator::make($this->request->all(), $rules);
@@ -116,11 +120,17 @@ class ProductController extends Controller
             return response()->json(['message' => 'Record not found!'], 404);
         }
 
+        $category = Category::find($this->request->category_id);
+
+        if(is_null($category)){
+            return response()->json([
+                'message' => 'Informe uma categoria que esteja cadastrada no banco de dados.!'
+            ], 404);
+        }
+
         $rules = [
             'name' => 'required|min:4',
             'description' => 'required|min:10|max:200',
-            'image' => 'nullable|image',
-            'category_id' => 'required',
         ];
 
         $validator = Validator::make($this->request->all(), $rules);
