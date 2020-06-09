@@ -18,14 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', 'Api\Auth\AuthController@register');
 Route::post('logged', 'Api\Auth\AuthController@logged');
 Route::match(['get', 'put', 'delete'], 'login', 'Api\Auth\AuthController@login')->name('login');
-//Route::get('login', 'Api\Auth\AuthController@login')->name('login');
 
-//esta forma simplificada atende todos os métodos do controlador
+//esta forma simplificada atende todos os métodos do controlador (POST, PUT or PATCH, GET and DELETE)
 Route::apiResource('/products', 'Api\Product\ProductController')->middleware('auth:api');
-/*Route::group(['middleware' => ['auth:api']], function(){
-    Route::get('/products', 'Api\Product\ProductController@index')->name('products.index');
-    Route::get('/products/{id}', 'Api\Product\ProductController@show')->name('products.show');
-    Route::put('/products/{id}', 'Api\Product\ProductController@update')->name('products.update');
-    Route::post('/products', 'Api\Product\ProductController@store')->name('products.store');
-    Route::delete('/products/{id}', 'Api\Product\ProductController@destroy')->name('products.destroy');
-});*/
+Route::get('logout', 'Api\Auth\AuthController@logout')->middleware('auth:api');
