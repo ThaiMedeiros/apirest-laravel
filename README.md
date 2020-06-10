@@ -4,7 +4,7 @@
 Bem vindos a um pequeno exemplo de API Restfull utilizando framework **Laravel**, 
 com autenticação do **Passport**.
 
-Para a inicialização do projeto, siga os seguintes passos:
+Para a inicialização do projeto, siga os seguintes passos: !
 
 ### Requisitos
 
@@ -33,8 +33,8 @@ ___
   - ``php artisan key:generate`` : para gerar uma chave **APP_KEY=** criptografada, que pode ser usada posteriormente em autenticações se necessário.
   - ``php artisan migrate`` : para rodar as migrações/tabelas no banco de dados.
   - ``php artisan passport:install`` : irá gerar duas chavez criptografadas no banco para realizar as autenticações. 
-  ! -- Observação: sempre que apagar todas as tabelas do banco de dados, rode o **passport:install** novamente após o **migrate**.
+   ```Observação: sempre que apagar todas as tabelas do banco de dados, rode o **passport:install** novamente após o **migrate**.```
 + Caso queria popular o banco de dados para começar as suas requisições, execute: **``php artisan db:seed``**, ele irá rodar todos os seeders programados e populará o banco de dados automaticamente.
 + Para inicializar, execute no terminal o comando: **``php artisan serve``** e poderá acessá-lo através do endereço: ``http://localhost:8000``.
 
-Depois de inicializado, já é possível começar os testes! Então, clique: [API](https://github.com/ThaiMedeiros/TestBackEndBeta/edit/master/api/README.md)
+Depois de inicializado, já é possível começar os testes! Então, clique: [API](/api)
