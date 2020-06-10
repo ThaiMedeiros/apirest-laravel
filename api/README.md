@@ -68,6 +68,26 @@ ___
 
 + **Method: DELETE**
     - **Deletar/Excluir:** ``http://localhost:8000/api/products/{id}``
+    
+##### Observações sobre as rotas:
+
++ Nas rotas que possui um parâmetro nela: _{id}_ trocar pelo número do ID que queria requisitar.
++ Nas rotas POST e PUT enviar no Body (corpo) da requisição, os dados no formato _JSON_.
++ Exemplo _JSON_ cadastro de produtos:
+``
+{
+	"name": "teste 1",
+	"price": 20,
+	"description": "test test teste",
+	"photo": "teste.jpg",
+	"category_id": 2
+}
+``
++ Antes de testar, verifique quais dados são obrigatórios nos métodos do controller de cada rota.
++ Nas rotas protegidas pelo _auth:api_ é necessário incluir um **token** no **header** da requisição. O _token_ é gerado ao logar, copie-o e insira no Header no seu client HTTP:
+    - nome do header: **Authorization**
+    - valor do header: **Bearer colar_token_gerado_aqui** (dê um espaço entre o _Bearer_ e o token).
+    - Exemplo: 
 
 Apesar do CRUD aparentar ser uma única rota no arquivo de routes/api.php o método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o Controller.php for criado commo um resouce e possuir as funções padrão: **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
 
