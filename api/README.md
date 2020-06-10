@@ -21,15 +21,15 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 ___
 
-### Testando as rotas de requisição
+## Testando as rotas de requisição
 
 + É possível realizar o teste das requisições de forma simples, baixe e instale um dos seguintes cliente de API REST:
     - [Insomnia](https://insomnia.rest/)
     - [Postman](https://www.postman.com/)
 
-#### Realizando as requisições a API:
+### Realizando as requisições a API:
 
-1. Autenticação na API:
+### Autenticação na API:
 
 + **Method: POST**
     - **Register:**``http://localhost:8000/api/register``
@@ -39,7 +39,7 @@ ___
     - **Logout:** ``http://localhost:8000/api/logout``
     - Login (Rota default: exibe apenas uma mensagem.) ``http://localhost:8000/api/login``
 
-2. CRUD de Categorias:
+### CRUD de Categorias:
 
 + **Method: GET**
     - **Listar/Buscar todas:** ``http://localhost:8000/api/categories``
@@ -54,7 +54,7 @@ ___
 + **Method: DELETE**
     - **Deletar/Excluir:** ``http://localhost:8000/api/categories/{id}``
 
-3. CRUD de Produtos:
+### CRUD de Produtos:
 
 + **Method: GET**
     - **Listar/Buscar todos:** ``http://localhost:8000/api/products``
@@ -82,7 +82,7 @@ ___
 ### Lista de comandos básicos e úteis para lidar com os elementos do laravel
 
 + **composer dump-autoload** : caso altere algo manualmente, tode-o para que o composer mapeie novamente a estrutura da aplicação. 
-+ **Tabelas / Seeders / Factorys **
++ **Tabelas / Seeders / Factorys**
     - ``php artisan make:migration create_name_table`` : Criar tabela.
     - ``php artisan make:seeder NomeTableSeeder`` : Criar seeder
     - ``php artisan db:seed`` : Roda todos os seeders que estiverem mapeados em DatabaseSeeder (padrão).
