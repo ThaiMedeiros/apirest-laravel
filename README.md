@@ -129,6 +129,8 @@ $ `php artisan serve`
 $ `http://localhost:8000`
 ```
 
+<br />
+
 - Depois de inicializado, já é possível começar os testes! Então, clique: [API](/api)
 
 <br />
