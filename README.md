@@ -91,8 +91,9 @@ $ cd TestBackEndBeta
 # logo depois entre na pasta da API
 $ cd api
 
-# Copie o arquivo: >> .env.example << cole no mesmo diretório em que se encontra e remova a extensão >> .example <<
-# Então, coloque as credenciais de acesso ao seu banco de dados, no agora arquivo >> .env <<
+# 1. copie o arquivo: >> .env.example << cole no mesmo diretório em que se encontra
+# 2. remova a extensão >> .example <<
+# 3. Então, coloque as credenciais de acesso ao seu banco de dados, no agora arquivo >> .env <<
 
 # inicialize os servidores Apache e MySQL
 $ execute o **laragon** ou **xampp** (ou outro servidor web)
@@ -101,10 +102,11 @@ $ execute o **laragon** ou **xampp** (ou outro servidor web)
 $ http://localhost://phpmyadmin (então crie um novo banco de dados)
 # Observação: o nome do banco de dados deve ser o mesmo que consta no arquivo .env
 
-# Agora, entre na pasta >> api << e para instalar as dependências do projeto, execute:
+# agora, entre na pasta >> api << e para instalar as dependências do projeto, execute:
 $ `composer install` ou `composer update` (e aguarde o término)
 
-# para gerar uma chave >> APP_KEY= << criptografada, que pode ser usada posteriormente em autenticações se necessário, execute:
+# para gerar uma chave >> APP_KEY= << criptografada,
+# que pode ser usada posteriormente em autenticações se necessário, execute:
 $ `php artisan key:generate`
 
 # para rodar as migrações/tabelas no banco de dados
@@ -113,7 +115,8 @@ $ `php artisan migrate`
 # gerar duas chaves criptografadas no banco para realizar as autenticações
 $ `php artisan passport:install`
 
-# Observação: sempre que apagar todas as tabelas do banco de dados, rode o >> passport:install << novamente após o >> migrate <<
+# Observação: sempre que apagar todas as tabelas do banco de dados,
+# rode o >> passport:install << novamente após o >> migrate <<
 
 # caso queria popular o banco de dados para começar as suas requisições, execute:
 $ `php artisan db:seed`
