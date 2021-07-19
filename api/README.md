@@ -273,4 +273,4 @@ The Laravel framework is open-sourced software licensed :balance_scale: under th
 
 ---
 
-Feito por: :copyright: Thaiza Medeiros :woman_technologist: :purple_heart:
+Desenvolvido por: :copyright: Thaiza Medeiros :woman_technologist: :purple_heart:

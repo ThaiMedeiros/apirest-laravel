@@ -155,4 +155,4 @@ Esse projeto está sob a licença :balance_scale: MIT License. Veja o arquivo [L
 
 ---
 
-Feito por: :copyright: Thaiza Medeiros :woman_technologist: :purple_heart:
+Desenvolvido por: :copyright: Thaiza Medeiros :woman_technologist: :purple_heart:
