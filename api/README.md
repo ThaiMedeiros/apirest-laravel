@@ -48,32 +48,34 @@
 ```
 
 3. Antes de testar, verifique quais dados são obrigatórios nos métodos do controller de cada rota.
-4. Nas rotas protegidas pelo _auth:api_ é necessário incluir um **token** no **header** da requisição.
-5. O _token_ é gerado ao logar, copie-o e insira no Header no seu client HTTP:
-   5.1. nome do header: **Authorization**
-   5.2. valor do header: **Bearer colar_token_gerado_aqui** (dê um espaço entre o _Bearer_ e o token).
-   5.3. Exemplo na rota de cadastrar produtos:
+4. Nas rotas protegidas pelo **_auth:api_** é necessário incluir um **token** no **header** da requisição.
+5. O **_token_** é gerado ao logar, copie-o e insira no Header no seu client HTTP:
 
-<br />
+    5.1. nome do header: **Authorization**.
+
+    5.2. valor do header: **Bearer colar_token_gerado_aqui** (dê um espaço entre o **_Bearer_** e o token).
+
+    5.3. Exemplo na rota de cadastrar produtos:
 
 ![Header Authorization](https://user-images.githubusercontent.com/23063152/84219865-d18a8d00-aaa7-11ea-947f-702c88cf80a2.png)
 
 <br />
 
-6.  Apesar do CRUD aparentar ser uma única rota no arquivo de **routes/api.php**. O método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o Controller.php for criado commo um resouce e possuir as funções padrão:
+6.  Apesar do CRUD aparentar ser uma única rota no arquivo de **routes/api.php**. O método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o **Controller.php** for criado commo um resouce e possuir as funções padrão:
+
     6.1. **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
 
-        | Tipos de Requisição |                      Descrição                      |
-        | :-----------------: | :-------------------------------------------------: |
-        |      **Index**      |          listar / busca todos os recursos.          |
-        |      **Show**       |  listar / busca um recurso passado na requisição.   |
-        |      **Store**      |             cadastra / cria um recurso.             |
-        |     **Update**      | atualiza / altera um recurso passado na requisição. |
-        |     **Destroy**     | deleta / excluir um recurso passado na requisição.  |
+| Tipos de Requisição |             CAracterística / Descrição              |
+| :-----------------: | :-------------------------------------------------: |
+|      **Index**      |          listar / busca todos os recursos.          |
+|      **Show**       |  listar / busca um recurso passado na requisição.   |
+|      **Store**      |             cadastra / cria um recurso.             |
+|     **Update**      | atualiza / altera um recurso passado na requisição. |
+|     **Destroy**     | deleta / excluir um recurso passado na requisição.  |
 
 <br />
 
-7. Lista de comandos básicos e úteis para lidar com os elementos do laravel
+7. Lista de comandos básicos e úteis para lidar com os elementos do laravel:
 
 ```bash
 # caso altere algo manualmente, tode-o para que o composer mapeie novamente a estrutura da aplicação.
