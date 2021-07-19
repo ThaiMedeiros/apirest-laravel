@@ -123,12 +123,41 @@ $ `php artisan view:clear`
     <h2> :closed_lock_with_key: Atutenticação na API</h2>
 </div>
 
-|  Método  |                  Característica                  |                 Rota                 |
-| :------: | :----------------------------------------------: | :----------------------------------: |
-| **POST** |                     Register                     | `http://localhost:8000/api/register` |
-|          |                      Logged                      |  `http://localhost:8000/api/logged`  |
-| **GET**  |                      Logout                      |  `http://localhost:8000/api/logout`  |
-|          | Login (Rota default: exibe apenas uma mensagem.) |  `http://localhost:8000/api/login`   |
+<div id="#" align="center">
+  <h4>
+    Tabela com as informações de atutenticação na API.
+  </h4>
+</div>
+
+<table class="table" align="center" style="text-align: center;">
+    <thead>
+        <tr>
+            <th scope="col">Método</th>
+            <th scope="col">Característica</th>
+            <th scope="col">Rota</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">GET</th>
+            <td>Logout</td>
+            <td><code>http://localhost:8000/api/logout</code></td>
+        </tr>
+        <tr>
+            <td>Login (Rota default: exibe apenas uma mensagem.)</td>
+            <td><code>http://localhost:8000/api/login</code></td>
+        </tr>
+        <tr>
+            <th scope="row" rowspan="2">POST</th>
+            <td>Register</td>
+            <td><code>http://localhost:8000/api/register</code></td>
+        </tr>
+        <tr>
+            <td>Logged</td>
+            <td><code>http://localhost:8000/api/logged</code></td>
+        </tr>
+    </tbody>
+</table>
 
 <br />
 
@@ -136,24 +165,47 @@ $ `php artisan view:clear`
     <h2> :pushpin: Categorias</h2>
 </div>
 
-### CRUD de Categorias:
+<div id="#" align="center">
+  <h4>
+    Tabela com as informações do CRUD de Categorias.
+  </h4>
+</div>
 
--   **Method: GET**
-
-    -   **Listar / Buscar todas:** `http://localhost:8000/api/categories`
-    -   **Listar / Buscar uma específica:** `http://localhost:8000/api/categories/{id}`
-
--   **Method: POST**
-
-    -   **Cadastrar / Criar:** `http://localhost:8000/api/categories`
-
--   **Method: PUT**
-
-    -   **Atualizar / Alterar:** `http://localhost:8000/api/categories/{id}`
-
--   **Method: DELETE**
-
-    -   **Deletar / Excluir:** `http://localhost:8000/api/categories/{id}`
+<table class="table" align="center" style="text-align: center;">
+    <thead>
+        <tr>
+            <th scope="col">Método</th>
+            <th scope="col">Característica</th>
+            <th scope="col">Rota</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">GET</th>
+            <td>Listar / Buscar todas</td>
+            <td><code>http://localhost:8000/api/categories</code></td>
+        </tr>
+        <tr>
+            <td>Listar / Buscar uma específica</td>
+            <td><code>http://localhost:8000/api/categories/{id}</code></td>
+        </tr>
+        <tr>
+            <th scope="row">POST</th>
+            <td>Cadastrar / Criar</td>
+            <td><code>http://localhost:8000/api/categories</code></td>
+        </tr>
+        <tr>
+            <th scope="row">PUT</th>
+            <td>Atualizar / Alterar</td>
+            <td><code>http://localhost:8000/api/categories/{id}</code></td>
+        </tr>
+        <tr>
+            <th scope="row">DELETE</th>
+            <td>Deletar / Excluir</td>
+            <td><code>http://localhost:8000/api/categories/{id}</code></td>
+        </tr>
+    </tbody>
+</table>
 
 <br />
 
@@ -161,24 +213,47 @@ $ `php artisan view:clear`
     <h2> :package: Produtos</h2>
 </div>
 
-### CRUD de Produtos:
+<div id="#" align="center">
+  <h4>
+    Tabela com as informações do CRUD de Produtos.
+  </h4>
+</div>
 
--   **Method: GET**
-
-    -   **Listar / Buscar todos:** `http://localhost:8000/api/products`
-    -   **Listar / Buscar um específico:** `http://localhost:8000/api/products/{id}`
-
--   **Method: POST**
-
-    -   **Cadastrar / Criar:** `http://localhost:8000/api/products`
-
--   **Method: PUT**
-
-    -   **Atualizar / Alterar:** `http://localhost:8000/api/products/{id}`
-
--   **Method: DELETE**
-
-    -   **Deletar / Excluir:** `http://localhost:8000/api/products/{id}`
+<table class="table" align="center" style="text-align: center;">
+    <thead>
+        <tr>
+            <th scope="col">Método</th>
+            <th scope="col">Característica</th>
+            <th scope="col">Rota</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">GET</th>
+            <td>Listar / Buscar todos</td>
+            <td><code>http://localhost:8000/api/products</code></td>
+        </tr>
+        <tr>
+            <td>Listar / Buscar um específico</td>
+            <td><code>http://localhost:8000/api/products/{id}</code></td>
+        </tr>
+        <tr>
+            <th scope="row">POST</th>
+            <td>Cadastrar / Criar</td>
+            <td><code>http://localhost:8000/api/products</code></td>
+        </tr>
+        <tr>
+            <th scope="row">PUT</th>
+            <td>Atualizar / Alterar</td>
+            <td><code>http://localhost:8000/api/products/{id}</code></td>
+        </tr>
+        <tr>
+            <th scope="row">DELETE</th>
+            <td>Deletar / Excluir</td>
+            <td><code>http://localhost:8000/api/products/{id}</code></td>
+        </tr>
+    </tbody>
+</table>
 
 <br />
 
