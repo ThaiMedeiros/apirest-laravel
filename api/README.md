@@ -56,6 +56,7 @@
 ![Header Authorization](https://user-images.githubusercontent.com/23063152/84219865-d18a8d00-aaa7-11ea-947f-702c88cf80a2.png)
 
 -   Apesar do CRUD aparentar ser uma única rota no arquivo de **routes/api.php**. O método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o Controller.php for criado commo um resouce e possuir as funções padrão:
+
     -   **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
 
         | Tipos de Requisição |                      Descrição                      |
@@ -122,15 +123,12 @@ $ `php artisan view:clear`
     <h2> :closed_lock_with_key: Atutenticação na API</h2>
 </div>
 
--   **Method: POST**
-
-    -   **Register:**`http://localhost:8000/api/register`
-    -   **Logged:** `http://localhost:8000/api/logged`
-
--   **Method: GET**
-
-    -   **Logout:** `http://localhost:8000/api/logout`
-    -   Login (Rota default: exibe apenas uma mensagem.) `http://localhost:8000/api/login`
+|  Método  |                  Característica                  |                 Rota                 |
+| :------: | :----------------------------------------------: | :----------------------------------: |
+| **POST** |                     Register                     | `http://localhost:8000/api/register` |
+|          |                      Logged                      |  `http://localhost:8000/api/logged`  |
+| **GET**  |                      Logout                      |  `http://localhost:8000/api/logout`  |
+|          | Login (Rota default: exibe apenas uma mensagem.) |  `http://localhost:8000/api/login`   |
 
 <br />
 
@@ -187,6 +185,7 @@ $ `php artisan view:clear`
 <div id="licenca" align="center">
     <h2> :memo: Licença</h2>
 </div>
+
 The Laravel framework is open-sourced software licensed :balance_scale: under the [MIT license](https://opensource.org/licenses/MIT).
 
 ---
