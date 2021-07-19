@@ -1,40 +1,140 @@
-![Rest-API](https://user-images.githubusercontent.com/23063152/84206685-100f5000-aa86-11ea-9289-0e3d8d0acfd7.png)
+<p align="center">
+  <img src="imagens/api-rest.png" alt="Rest API" title="Rest API" style="vertical-align:top; margin:6px 4px;">
+</p><br />
 
-## TestBackEndBeta
-Bem vindos a um pequeno exemplo de API Restfull utilizando framework **Laravel**, 
-com autenticação do **Passport**.
+## Teste de backend para a Beta Sistemas
 
-Para a inicialização do projeto, siga os seguintes passos: !
+- Um pequeno exemplo de API Restfull utilizando framework **Laravel**,
+  - **Observação:** com autenticação do **Passport**.
 
-### Requisitos
+<br />
 
-1. Escolha um diretório no qual irá hospedar seu projeto localmente.
-2. Tenha um servidor PHP e de banco de dados instalado:
-> 2.1. Uma opção é o: [XAMPP](https://www.apachefriends.org/) - possui alguns servidores e já disponibiliza um servidor local PHP e MySQL.
-3. Instalar o [GIT](https://git-scm.com/)  - responsável pelo versionamento de arquivos.
-4. Instalar o composer [Composer](https://getcomposer.org/).
+<p align="center">
+  <a href="#features"> :newspaper: Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#requisitos">:pushpin: Pré-requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias">:computer: Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rodando"> :arrow_forward: Rodando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#licenca"> :memo: Licença</a>
+</p>
 
-___
+<br />
 
-### Obtendo o repositório
+<div id="features" align="center">
+  <h2> :newspaper: Features</h2>
+</div>
 
-+ Abra o terminal do seu computador e entre na pasta que deseja armazenar o projeto.
-+ No seu terminal (cmd.exe no windows) da sua máquina escreva:
-  - git clone link_repositorio.git (ex: git clone https://github.com/ThaiMedeiros/TestBackEndBeta.git)
-  - Aguarde até que o download do projeto tenha terminado.
-+ Entre na pasta do projeto, neste caso: **``cd api``**
+- [x] Realiza login com o passport.
+- [x] CRUD de categorias:
+  - [x] Cria;
+  - [x] Lê;
+  - [x] Atualiza;
+  - [x] Exclui.
+- [x] CRUD de produtos:
+  - [x] Cria;
+  - [x] Lê;
+  - [x] Atualiza;
+  - [x] Exclui.
 
-### inicializando o projeto
+<br />
 
-+ Copie o arquivo: **.env.example** cole no mesmo diretório em que se encontra e remova a extensão **.example**. Então, coloque as credenciais de acesso ao seu banco de dados. 
-+ Execute o xampp através do xampp.control **inicialize o Apache e o MySQL**, após acesse o **``http://localhost://phpmyadmin``** e crie um novo banco de dados.
-+ Após a criação do banco, volte ao terminal na raiz do projeto **Laravel** e digite:
-  - ``composer install`` ou ``composer update`` : para instalar as dependências do projeto.
-  - ``php artisan key:generate`` : para gerar uma chave **APP_KEY=** criptografada, que pode ser usada posteriormente em autenticações se necessário.
-  - ``php artisan migrate`` : para rodar as migrações/tabelas no banco de dados.
-  - ``php artisan passport:install`` : irá gerar duas chavez criptografadas no banco para realizar as autenticações. 
-   ```Observação: sempre que apagar todas as tabelas do banco de dados, rode o **passport:install** novamente após o **migrate**.```
-+ Caso queria popular o banco de dados para começar as suas requisições, execute: **``php artisan db:seed``**, ele irá rodar todos os seeders programados e populará o banco de dados automaticamente.
-+ Para inicializar, execute no terminal o comando: **``php artisan serve``** e poderá acessá-lo através do endereço: ``http://localhost:8000``.
+<div id="requisitos" align="center">
+  <h2> :pushpin: Pré-requisitos</h2>
+</div>
 
-Depois de inicializado, já é possível começar os testes! Então, clique: [API](/api)
+<div id="#" align="center">
+  <h4>
+    <b>Observação:</b> o Laragon e o Xampp já contém um servidor Apache e um MySQL. Com isso,  não é necessário instalar separadamente o Apache e o MySQL.
+  </h4>
+</div>
+
+- [Apache](https://www.apache.org/)
+- [Composer](https://getcomposer.org/)
+- [Git](https://git-scm.com)
+- [Laragon](https://laragon.org/) ou [XAMPP](https://www.apachefriends.org/)
+- [Laravel](https://laravel.com/)
+- [MySQL](https://www.mysql.com/)
+- [Postman](https://www.postman.com/)
+- [VSCode](https://code.visualstudio.com/)
+
+<br />
+
+<div id="tecnologias" align="center">
+  <h2> :computer: Tecnologias</h2>
+</div>
+
+- Esse projeto foi desenvolvido com as seguintes tecnologias:
+  - Composer;
+  - MySQL;
+  - Laravel;
+    - Passport;
+  - PHP.
+
+<br />
+
+<div id="rodando" align="center">
+  <h2> :arrow_forward: Rodando o Projeto</h2>
+</div>
+
+<div id="#" align="center">
+  <h4>
+    Siga os seguintes passos para instalar:
+  </h4>
+</div>
+
+```bash
+# clonando o projeto na sua maquina
+$ git clone https://github.com/ThaiMedeiros/TestBackEndBeta.git
+
+# entre na pasta do projeto
+$ cd TestBackEndBeta
+
+# logo depois entre na pasta da API
+$ cd api
+
+# Copie o arquivo: >> .env.example << cole no mesmo diretório em que se encontra e remova a extensão >> .example <<
+# Então, coloque as credenciais de acesso ao seu banco de dados, no agora arquivo >> .env <<
+
+# inicialize os servidores Apache e MySQL
+$ execute o **laragon** ou **xampp** (ou outro servidor web)
+
+# logo após a inicialização, acesse no browser:
+$ http://localhost://phpmyadmin (então crie um novo banco de dados)
+# Observação: o nome do banco de dados deve ser o mesmo que consta no arquivo .env
+
+# Agora, entre na pasta >> api << e para instalar as dependências do projeto, execute:
+$ `composer install` ou `composer update` (e aguarde o término)
+
+# para gerar uma chave >> APP_KEY= << criptografada, que pode ser usada posteriormente em autenticações se necessário, execute:
+$ `php artisan key:generate`
+
+# para rodar as migrações/tabelas no banco de dados
+$ `php artisan migrate`
+
+# gerar duas chaves criptografadas no banco para realizar as autenticações
+$ `php artisan passport:install`
+
+# Observação: sempre que apagar todas as tabelas do banco de dados, rode o >> passport:install << novamente após o >> migrate <<
+
+# caso queria popular o banco de dados para começar as suas requisições, execute:
+$ `php artisan db:seed`
+
+# para inicializar, execute no terminal o comando:
+$ `php artisan serve`
+
+# poderá acessá-lo através do endereço:
+$ `http://localhost:8000`
+```
+
+- Depois de inicializado, já é possível começar os testes! Então, clique: [API](/api)
+
+<br />
+
+<div id="licenca" align="center">
+    <h2> :memo: Licença</h2>
+</div>
+
+Esse projeto está sob a licença :balance_scale: GNU GENERAL PUBLIC LICENSE. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Feito por: :copyright: Thaiza Medeiros :woman_technologist: :purple_heart:
