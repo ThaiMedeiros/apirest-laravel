@@ -136,7 +136,7 @@ $ `http://localhost:8000`
     <h2> :memo: Licença</h2>
 </div>
 
-Esse projeto está sob a licença :balance_scale: GNU GENERAL PUBLIC LICENSE. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Esse projeto está sob a licença :balance_scale: MIT License. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
