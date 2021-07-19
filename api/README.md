@@ -37,7 +37,7 @@
 # Nas rotas que possui um parâmetro nela: _{id}_ trocar pelo número do ID que queria requisitar.
 # Nas rotas POST e PUT enviar no Body (corpo) da requisição, os dados no formato _JSON_.
 # Exemplo _JSON_ cadastro de produtos:
-``
+`
 {
 	"name": "teste 1",
 	"price": 20,
@@ -45,17 +45,19 @@
 	"photo": "teste.jpg",
 	"category_id": 2
 }
-``
-# Antes de testar, verifique quais dados são obrigatórios nos métodos do controller de cada rota.
-# Nas rotas protegidas pelo _auth:api_ é necessário incluir um **token** no **header** da requisição.
-# O _token_ é gerado ao logar, copie-o e insira no Header no seu client HTTP:
-#    - nome do header: **Authorization**
-#    - valor do header: **Bearer colar_token_gerado_aqui** (dê um espaço entre o _Bearer_ e o token).
-#    - Exemplo na rota de cadastrar produtos:
+`
+```
 
+-   Antes de testar, verifique quais dados são obrigatórios nos métodos do controller de cada rota.
+-   Nas rotas protegidas pelo _auth:api_ é necessário incluir um **token** no **header** da requisição.
+-   O _token_ é gerado ao logar, copie-o e insira no Header no seu client HTTP:
+    -   nome do header: **Authorization**
+    -   valor do header: **Bearer colar_token_gerado_aqui** (dê um espaço entre o _Bearer_ e o token).
+    -   Exemplo na rota de cadastrar produtos:
 
 ![Header Authorization](https://user-images.githubusercontent.com/23063152/84219865-d18a8d00-aaa7-11ea-947f-702c88cf80a2.png)
 
+```bash
 # Apesar do CRUD aparentar ser uma única rota no arquivo de routes/api.php
 # o método >> resources << do laravel diferencia as rotas de acordo com a requisição feita,
 # se o Controller.php for criado commo um resouce e possuir as funções padrão:
