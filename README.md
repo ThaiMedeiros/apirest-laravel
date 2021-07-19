@@ -14,6 +14,7 @@
   <a href="#requisitos">:pushpin: Pré-requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias">:computer: Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rodando"> :arrow_forward: Rodando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#contribuir"> :jigsaw: Como Contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#licenca"> :memo: Licença</a>
 </p>
 
@@ -129,6 +130,18 @@ $ `http://localhost:8000`
 ```
 
 - Depois de inicializado, já é possível começar os testes! Então, clique: [API](/api)
+
+<br />
+
+<div id="contribuir" align="center">
+    <h2> :jigsaw: Como Contribuir</h2>
+</div>
+
+1. Faça um fork desse projeto.
+2. Crie uma nova branch para trabalhar: `git checkout -b my-feature`
+3. Faça commit da sua feature: `git commit -m "feature: My new feature"`
+4. Envie as suas alterações: `git push origin my-feature`
+5. Solicite uma Pull Request para o diretório original.
 
 <br />
 
