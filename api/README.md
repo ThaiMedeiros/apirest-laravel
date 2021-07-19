@@ -65,7 +65,7 @@
 
     6.1. **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
 
-| Tipos de Requisição |             CAracterística / Descrição              |
+| Tipos de Requisição |             Característica / Descrição              |
 | :-----------------: | :-------------------------------------------------: |
 |      **Index**      |          listar / busca todos os recursos.          |
 |      **Show**       |  listar / busca um recurso passado na requisição.   |
