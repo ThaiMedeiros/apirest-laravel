@@ -1,7 +1,5 @@
 <p align="center">
     <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
@@ -57,18 +55,17 @@
 
 ![Header Authorization](https://user-images.githubusercontent.com/23063152/84219865-d18a8d00-aaa7-11ea-947f-702c88cf80a2.png)
 
+-   Apesar do CRUD aparentar ser uma única rota no arquivo de **routes/api.php**. O método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o Controller.php for criado commo um resouce e possuir as funções padrão:
+    -   **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
+        | Tipos de Requisição |
+        | ------------------- | --------------------------------------------------- |
+        | **Index:** | listar / busca todos os recursos. |
+        | **Show:** | listar / busca um recurso passado na requisição. |
+        | **Store:** | cadastra / cria um recurso. |
+        | **Update:** | atualiza / altera um recurso passado na requisição. |
+        | **Destroy:** | deleta / excluir um recurso passado na requisição. |
+
 ```bash
-# Apesar do CRUD aparentar ser uma única rota no arquivo de routes/api.php
-# o método >> resources << do laravel diferencia as rotas de acordo com a requisição feita,
-# se o Controller.php for criado commo um resouce e possuir as funções padrão:
-# >> (Index, Show, Store, Update e Destroy) <<, a própria rota direciona para o método específico.
-
-$ `**Index:** listar/busca todos os recursos.`
-$ `**Show:** listar/busca um recurso passado na requisição.`
-$ `**Store:** cadastra/cria um recurso.`
-$ `**Update:** atualiza/altera um recurso passado na requisição.`
-$ `**Destroy:** deleta/excluir um recurso passado na requisição.`
-
 ### Lista de comandos básicos e úteis para lidar com os elementos do laravel
 
 # caso altere algo manualmente, tode-o para que o composer mapeie novamente a estrutura da aplicação.
@@ -124,11 +121,40 @@ $ `php artisan view:clear`
     <h2> :closed_lock_with_key: Atutenticação na API</h2>
 </div>
 
+-   **Method: POST**
+
+    -   **Register:**`http://localhost:8000/api/register`
+    -   **Logged:** `http://localhost:8000/api/logged`
+
+-   **Method: GET**
+
+    -   **Logout:** `http://localhost:8000/api/logout`
+    -   Login (Rota default: exibe apenas uma mensagem.) `http://localhost:8000/api/login`
+
 <br />
 
 <div id="categorias" align="center">
     <h2> :pushpin: Categorias</h2>
 </div>
+
+### CRUD de Categorias:
+
+-   **Method: GET**
+
+    -   **Listar / Buscar todas:** `http://localhost:8000/api/categories`
+    -   **Listar / Buscar uma específica:** `http://localhost:8000/api/categories/{id}`
+
+-   **Method: POST**
+
+    -   **Cadastrar / Criar:** `http://localhost:8000/api/categories`
+
+-   **Method: PUT**
+
+    -   **Atualizar / Alterar:** `http://localhost:8000/api/categories/{id}`
+
+-   **Method: DELETE**
+
+    -   **Deletar / Excluir:** `http://localhost:8000/api/categories/{id}`
 
 <br />
 
@@ -136,54 +162,24 @@ $ `php artisan view:clear`
     <h2> :package: Produtos</h2>
 </div>
 
-### Realizando as requisições a API:
-
-### Autenticação na API:
-
--   **Method: POST**
-
-    -   **Register:**`http://localhost:8000/api/register`
-    -   **Logged:** `http://localhost:8000/api/logged`
-
--   **Method: GET**
-    -   **Logout:** `http://localhost:8000/api/logout`
-    -   Login (Rota default: exibe apenas uma mensagem.) `http://localhost:8000/api/login`
-
-### CRUD de Categorias:
-
--   **Method: GET**
-
-    -   **Listar/Buscar todas:** `http://localhost:8000/api/categories`
-    -   **Listar/Buscar uma específica:** `http://localhost:8000/api/categories/{id}`
-
--   **Method: POST**
-
-    -   **Cadastrar/Criar:** `http://localhost:8000/api/categories`
-
--   **Method: PUT**
-
-    -   **Atualizar/Alterar:** `http://localhost:8000/api/categories/{id}`
-
--   **Method: DELETE**
-    -   **Deletar/Excluir:** `http://localhost:8000/api/categories/{id}`
-
 ### CRUD de Produtos:
 
 -   **Method: GET**
 
-    -   **Listar/Buscar todos:** `http://localhost:8000/api/products`
-    -   **Listar/Buscar um específico:** `http://localhost:8000/api/products/{id}`
+    -   **Listar / Buscar todos:** `http://localhost:8000/api/products`
+    -   **Listar / Buscar um específico:** `http://localhost:8000/api/products/{id}`
 
 -   **Method: POST**
 
-    -   **Cadastrar/Criar:** `http://localhost:8000/api/products`
+    -   **Cadastrar / Criar:** `http://localhost:8000/api/products`
 
 -   **Method: PUT**
 
-    -   **Atualizar/Alterar:** `http://localhost:8000/api/products/{id}`
+    -   **Atualizar / Alterar:** `http://localhost:8000/api/products/{id}`
 
 -   **Method: DELETE**
-    -   **Deletar/Excluir:** `http://localhost:8000/api/products/{id}`
+
+    -   **Deletar / Excluir:** `http://localhost:8000/api/products/{id}`
 
 <br />
 
