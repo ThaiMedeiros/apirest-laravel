@@ -57,13 +57,14 @@
 
 -   Apesar do CRUD aparentar ser uma única rota no arquivo de **routes/api.php**. O método **resources** do laravel diferencia as rotas de acordo com a requisição feita, se o Controller.php for criado commo um resouce e possuir as funções padrão:
     -   **(Index, Show, Store, Update e Destroy)**, a própria rota direciona para o método específico.
-        | Tipos de Requisição |
-        | ------------------- | --------------------------------------------------- |
-        | **Index:** | listar / busca todos os recursos. |
-        | **Show:** | listar / busca um recurso passado na requisição. |
-        | **Store:** | cadastra / cria um recurso. |
-        | **Update:** | atualiza / altera um recurso passado na requisição. |
-        | **Destroy:** | deleta / excluir um recurso passado na requisição. |
+
+        | Tipos de Requisição |                      Descrição                      |
+        | :-----------------: | :-------------------------------------------------: |
+        |      **Index**      |          listar / busca todos os recursos.          |
+        |      **Show**       |  listar / busca um recurso passado na requisição.   |
+        |      **Store**      |             cadastra / cria um recurso.             |
+        |     **Update**      | atualiza / altera um recurso passado na requisição. |
+        |     **Destroy**     | deleta / excluir um recurso passado na requisição.  |
 
 ```bash
 ### Lista de comandos básicos e úteis para lidar com os elementos do laravel
