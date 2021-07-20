@@ -84,10 +84,10 @@
 
 ```bash
 # clonando o projeto na sua maquina
-$ git clone https://github.com/ThaiMedeiros/TestBackEndBeta.git
+$ git clone https://github.com/ThaiMedeiros/apirest-laravel.git
 
 # entre na pasta do projeto
-$ cd TestBackEndBeta
+$ cd apirest-laravel
 
 # logo depois entre na pasta da API
 $ cd api
